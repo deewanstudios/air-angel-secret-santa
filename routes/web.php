@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SecretSantaController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,12 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', [HomeController::class, 'index']);
-
-/* function loop_example(){
-$i = array(1,2,3);
-forall($i as $j){
-
-ddd($j);
-}
-} */
+Route::get('/', [SecretSantaController::class, 'show']);
+Route::get('secret-santa/add', [HomeController::class, 'index']);
+Route::post('secret-santa/process', [HomeController::class, 'processForm']);
